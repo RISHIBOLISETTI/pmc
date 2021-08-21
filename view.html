@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            View Details
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    </head>
+    <body>
+        <div class="m-2">
+            <label><b>First Name:</b></label>
+            <input class="form-control" type="text" id="f_name" name="f_name"   placeholder="Enter your FirstName.." required readonly>
+            </div>
+            <div class="m-2">
+                <label><b>Last Name:</b></label>
+                <input class="form-control" type="text" id="l_name" name="l_name"  placeholder="Enter your Last Name.." required readonly>
+            </div>
+            <div class="m-2">
+                <label><b>Mobile No:</b></label>
+                <input class="form-control" type="phone" id="mob_num" name="mob_num" placeholder="Enter your phone number" required readonly>
+            </div>
+            <div class="m-2">
+                <label><b>Email:</b></label>
+                <input class="form-control" type="email" id="email"  name="email" placeholder="Enter your email id" required readonly>
+            </div>
+            <div class="m-2">
+                <label><b>Password:</b></label>
+                <input class="form-control" type="text" id="pass"  name="pass"  placeholder="Enter your password" required readonly>
+            </div>
+    </body>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const code = urlParams.get('fname')
+        const code1 = urlParams.get('lname')
+        const code2 = urlParams.get('mobnum')
+        const code3 = urlParams.get('email')
+        const code4 = urlParams.get('pass')
+        document.getElementById("f_name").value=code;
+        document.getElementById("l_name").value=code1;
+        document.getElementById("mob_num").value=code2;
+        document.getElementById("email").value=code3;
+        document.getElementById("pass").value=code4;
+    </script>
+</html>

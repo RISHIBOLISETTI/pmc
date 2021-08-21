@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>User Details</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  
+</head>
+<body id="body">
+    
+        
+        <div class="row form-group-inner">
+            <div class="card col-6 ">
+                <div class="card-body m-5">
+                
+        <div class="m-2">
+        <label><b>First Name:</b></label>
+        <input class="form-control" type="text" id="f_name" name="f_name"   placeholder="Enter your FirstName.." required>
+        </div>
+        <div class="m-2">
+            <label><b>Last Name:</b></label>
+            <input class="form-control" type="text" id="l_name" name="l_name"  placeholder="Enter your Last Name.." required>
+        </div>
+        <div class="m-2">
+            <label><b>Mobile No:</b></label>
+            <input class="form-control" type="phone" id="mob_num" name="mob_num" placeholder="Enter your phone number" required>
+        </div>
+        <div class="m-2">
+            <label><b>Email:</b></label>
+            <input class="form-control" type="email" id="email"  name="email" placeholder="Enter your email id" required>
+        </div>
+        <div class="m-2">
+            <label><b>Password:</b></label>
+            <input class="form-control" type="password" id="pass"  name="pass"  placeholder="Enter your password" required>
+        </div>
+        
+        <center><button onclick="first()" class="btn btn-primary">Submit</button></center>
+         
+         
+        </div>
+            </div>
+     
+         <div class="card col-6">
+         <div class="card-body m-5">
+         <table width="100%"  id="datatable1" class="table table-striped table-bordered">
+            <thead>
+                <td>Srno</td>
+                <td>Name</td>
+                <td>mobile Number</td>
+                <td>Email</td>
+                <td>Actions</td>
+            </thead>
+
+         </table>
+          </div>
+         </div>
+     </div>
+    
+
+
+
+    <script>
+        var i=1;
+         function first()
+         {
+        var fname=document.getElementById("f_name").value;
+        var lname=document.getElementById("l_name").value;
+        var  mobnum=document.getElementById("mob_num").value;
+        var email=document.getElementById("email").value;
+        var pass=document.getElementById("pass").value;
+let tbody = document.createElement('tbody');
+
+
+// Adding the entire table to the body tag
+document.getElementById('datatable1').appendChild(tbody);
+let row_1 = document.createElement('tr');
+let row_1_data_1 = document.createElement('td');
+row_1_data_1.innerHTML = i;
+let row_1_data_2 = document.createElement('td');
+row_1_data_2.innerHTML = fname;
+let row_1_data_3 = document.createElement('td');
+row_1_data_3.innerHTML = mobnum;
+let row_1_data_4 = document.createElement('td');
+row_1_data_4.innerHTML = email;
+let row_1_data_5 = document.createElement('td');
+row_1_data_5.innerHTML ='<button class="btn btn-success mx-2"><i class="fa fa-pencil">Edit</i></button><a href="view.html?fname='+fname+'&lname='+lname+'&mobnum='+mobnum+'&email='+email+'&pass='+pass+'" target="_blank" class="btn btn-primary"><i class="fa fa-eye" >View</i></a>';
+row_1.appendChild(row_1_data_1);
+row_1.appendChild(row_1_data_2);
+row_1.appendChild(row_1_data_3);
+row_1.appendChild(row_1_data_4);
+row_1.appendChild(row_1_data_5);
+tbody.appendChild(row_1);
+  i=i+1;       
+         }
+        
+    </script>
+
+
+
+</body>
+</html>
+
+
